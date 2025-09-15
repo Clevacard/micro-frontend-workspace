@@ -1,0 +1,122 @@
+.gift-card-page {
+  font-family: "Arial", sans-serif;
+  background: #ffffff;
+  color: #333333;
+}
+
+/* Top Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* padding: 1rem 3rem; */
+  border-bottom: 1px solid #eaeaea;
+
+  .nav-logo {
+    height: 80px;
+    margin-right: 600px ;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    margin-right: 100px;
+
+    a {
+      font-size: 17px;
+      color: #444444a6;
+      text-decoration: none;
+      font-weight: 0;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #e30613; 
+      }
+    }
+  }
+}
+
+/* Content Section */
+.gift-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* padding: 3rem; */
+  gap: 5rem;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.gift-card-text {
+  flex: 1;
+  max-width: 100%;
+  padding-left: 350px;
+  padding-right: 100px;
+  padding-block: 50px;
+
+  .title {
+    /* font-size: 2.2rem; */
+    font-weight: bold;
+    color: #e30613;
+    margin-bottom: 1.5rem;
+      font-size: 3.1111em;
+  line-height: 1.1428;
+  margin-bottom: .6071em;
+   color: #e30613;
+  font-style: normal !important;
+  text-transform: inherit !important;
+  color: var(--color-brand);
+  font-weight: 900;
+  font-family: Manus, sans-serif !important;
+  font-style: normal !important;
+  text-transform: inherit !important;
+  }
+
+  .description {
+   font-size: 18px;
+    color: #333333ad;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .note {
+    font-size: 0.95rem;
+    color: #666666;
+    margin: 1.5rem 0;
+  }
+
+  .btn-buy {
+    background: #e30613; 
+    color: #ffffff;
+    border: none;
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #b3050f; 
+    }
+  }
+
+   .icon__arrow-right {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+}
+}
+
+.gift-card-image {
+  flex: 1;
+
+  img {
+    /* width: 100%; */
+    border-radius: 8px;
+    object-fit: cover;
+  }
+}

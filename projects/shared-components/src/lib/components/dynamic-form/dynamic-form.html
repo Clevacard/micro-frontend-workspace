@@ -1,0 +1,21 @@
+<form [formGroup]="form" novalidate class="dynamic-form">
+  <ng-container *ngFor="let field of formFields">
+    <div class="form-field-wrapper">
+      <lib-form-input
+        *ngIf="field.type === 'input'"
+        [label]="field.label"
+        [controlName]="field.name"
+        [placeholder]="field.placeholder || ''"
+      ></lib-form-input>
+
+      <lib-form-select
+        *ngIf="field.type === 'select'"
+        [label]="field.label"
+        [controlName]="field.name"
+        [options]="field.options || []"
+      ></lib-form-select>
+    </div>
+  </ng-container>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>

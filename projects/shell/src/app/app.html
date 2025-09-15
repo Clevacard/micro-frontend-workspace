@@ -1,0 +1,35 @@
+<!-- Shell Header -->
+<header class="shell-header">
+  <h1>Shell App</h1>
+</header>
+
+<!-- Dashboard -->
+<main class="shell-dashboard">
+  <!-- Show cards only if no active app -->
+  <section class="card-grid" >
+    <div class="card" (click)="loadMicroApp('microApp1')">
+      <h2>Micro App 1</h2>
+      <p>Click to open Micro App 1</p>
+    </div>
+
+    <div class="card" (click)="loadMicroApp('microApp2')">
+      <h2>Micro App 2</h2>
+      <p>Click to open Micro App 2</p>
+    </div>
+
+    <div class="card" (click)="loadMicroApp('microApp3')">
+      <h2>Micro App 3</h2>
+      <p>Click to open Micro App 3</p>
+    </div>
+  </section>
+
+  <!-- Active Micro App -->
+  <section class="micro-app" >
+    <!-- <button class="back-btn" (click)="closeMicroApp()">← Back to Dashboard</button> -->
+    <!-- <h2>{{ activeApp | titlecase }}</h2> -->
+    <ng-container></ng-container>
+  </section>
+</main>
+
+<!-- </div>
+<h1>Shell App</h1> <button (click)="loadMicroApp2()">Load Micro App 2</button>  -->
