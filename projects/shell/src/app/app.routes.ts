@@ -15,7 +15,6 @@ export const routes: Routes = [
         remoteEntry: 'http://localhost:4201/remoteEntry.js'
       }).then(m => m.App)
    },
-   
   { path: 'dashboard',  component: Dashboard},
   { path: 'login', component: Login},
   { path: '', component: App, pathMatch: 'full' },
