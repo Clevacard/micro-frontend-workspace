@@ -1,0 +1,29 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "esnext",
+    "lib": ["dom", "ES2022"],
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "../../out-tsc/app",
+    "types": [],
+    "paths": {
+      "shared-components": ["./src/public-api.ts"]
+    }
+  },
+  "files": ["src/main.ts"],
+  "include": [
+    "src/**/*.ts",
+    "micro-app1.module.ts",  
+    "src/**/*.d.ts",
+    "typings.d.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
+}

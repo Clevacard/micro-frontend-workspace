@@ -11,9 +11,15 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "experimentalDecorators": true,
+    "paths": {
+      "shared-components": [
+        "./dist/shared-components"
+      ]
+    },
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+   "module": "ESNext",          // needed for dynamic imports (async/await)
+"moduleResolution": "node"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -22,5 +28,37 @@
     "typeCheckHostBindings": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/shell/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/shell/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/micro-app1/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/micro-app1/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/micro-app2/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/micro-app2/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/micro-app3/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/micro-app3/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/shared-components/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/shared-components/tsconfig.spec.json"
+    }
+  ]
 }

@@ -1,0 +1,13 @@
+<div *ngIf="!isLogin" class="login-container">
+  <form (ngSubmit)="onLogin()">
+    <h2>Login</h2>
+    <p class="quote">“Success is not final, failure is not fatal. Keep going!”</p>
+
+    <input [(ngModel)]="username" name="username" placeholder="Username" required />
+    <input [(ngModel)]="password" name="password" placeholder="Password" type="password" required />
+
+    <button type="submit">Login</button>
+
+    <p *ngIf="loginFailed" class="error-message">Login failed. Try 'admin' / 'password'.</p>
+  </form>
+</div>

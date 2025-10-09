@@ -1,0 +1,29 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+     "paths": {
+     "microApp2/*": ["./src/webpack-remotes.d.ts"],
+      "microApp1/*": ["./src/webpack-remotes.d.ts"],
+      "microApp3/*": ["./src/webpack-remotes.d.ts"]
+     },
+    "target": "ES2022",  // or "es2020"
+    "module": "esnext",
+    "lib": ["dom", "ES2022"],
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "../../out-tsc/app",
+    "types": []
+  },
+  "include": [
+    "src/**/*.ts", "remote-loader.ts",
+  ],
+  "exclude": [
+    "src/**/*.spec.ts"
+     
+  ]
+}
