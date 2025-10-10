@@ -35,6 +35,11 @@
               "projects/shell/src/styles.scss"
             ]
           },
+          "allowedCommonJsDependencies": [
+            "core-js",
+            "regenerator-runtime"
+          ],
+
           "configurations": {
             "production": {
               "budgets": [
@@ -67,7 +72,8 @@
             },
             "development": {
               "buildTarget": "shell:build:development",
-              "port": 4200
+              "port": 4200,
+              "liveReload": false
             }
           },
           "defaultConfiguration": "development"

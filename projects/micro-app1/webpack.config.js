@@ -18,7 +18,7 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         // 👇 expose the standalone App component
-        './App': './projects/micro-app1/src/app/app.ts',
+        // './App': './projects/micro-app1/src/app/app.ts',
       },
       shared: {
 

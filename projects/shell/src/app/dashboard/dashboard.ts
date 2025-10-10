@@ -1,23 +1,21 @@
+import { Component } from '@angular/core';
 import { loadRemoteModule } from '@angular-architects/module-federation';
-import { Component, ViewContainerRef, inject,ComponentFactoryResolver, Injector } from '@angular/core';
-import { loadRemoteContainer } from '../../remote-loader'; 
+import { ViewContainerRef, inject,ComponentFactoryResolver, Injector } from '@angular/core';
+import { loadRemoteContainer } from '../../../remote-loader'; 
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from './auth.service';
-import { CommonModule } from '@angular/common';
+import { AuthService } from '../auth.service';
+
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
- templateUrl: './app.html',
-   styleUrls: ['./app.scss'],
-   imports: [
-    RouterModule,
-    CommonModule
-  ],
+  selector: 'app-dashboard',
+  imports: [],
+  templateUrl: './dashboard.html',
+  styleUrl: './dashboard.scss'
 })
-export class App {
-  // private vc = inject(ViewContainerRef);
-activeApp: string | null = null;
+export class Dashboard {
+
+  activeApp: string | null = null;
+  loading = false;
 
   constructor(
     private router: Router,
@@ -64,14 +62,29 @@ activeApp: string | null = null;
   }
 
 
-   async loadMicroApp1() {
+  //  async loadMicroApp1() {
+  //   try {
+  //     await loadRemoteContainer('microApp1', 'http://localhost:4201/remoteEntry.js');
+  //     const { App: RemoteApp } = await import('microApp1/App');
+  //     this.vc.clear();
+  //     this.vc.createComponent(RemoteApp, { injector: this.injector });
+  //   } catch (err) {
+  //     console.error('Error loading micro1 app:', err);
+  //   }
+  // }
+
+    async loadMicroApp1() {
     try {
+      this.loading = true; // show loader
       await loadRemoteContainer('microApp1', 'http://localhost:4201/remoteEntry.js');
       const { App: RemoteApp } = await import('microApp1/App');
+
       this.vc.clear();
       this.vc.createComponent(RemoteApp, { injector: this.injector });
     } catch (err) {
       console.error('Error loading micro1 app:', err);
+    } finally {
+      this.loading = false; // hide loader
     }
   }
 
@@ -113,12 +126,5 @@ activeApp: string | null = null;
     }
   }
 
-  
-  navigateToLogin(): void {
-    this.router.navigate(['/login']);
-  }
 
-  isIntroScreen(): boolean {
-    return this.router.url === '/';
-  }
 }
