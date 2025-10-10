@@ -65,19 +65,26 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "shell:build:production"
-            },
-            "development": {
-              "buildTarget": "shell:build:development",
-              "port": 4200,
-              "liveReload": false
-            }
-          },
-          "defaultConfiguration": "development"
+        "builder": "@angular-builders/custom-webpack:dev-server",
+        "options": {
+          "buildTarget": "shell:build:development",
+          "host": "0.0.0.0",
+          "port": 4200,
+          "liveReload": false
         },
+        "configurations": {
+          "production": {
+            "buildTarget": "shell:build:production",
+            "liveReload": false
+          },
+          "development": {
+            "buildTarget": "shell:build:development",
+            "port": 4200,
+            "liveReload": false
+          }
+        }
+      } ,
+
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
         },
