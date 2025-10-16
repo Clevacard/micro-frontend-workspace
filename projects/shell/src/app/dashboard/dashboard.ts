@@ -45,13 +45,15 @@ export class Dashboard {
     this.router.navigate(['/']); // back to dashboard
   }
 
-  async loadMicroApp2() {
+
+
+   async loadMicroApp2() {
     try {
       // Load the remote entry script
-      await loadRemoteContainer('microApp2', 'http://localhost:4202/remoteEntry.js');
+      await loadRemoteContainer('App1', 'http://localhost:4202/remoteEntry.js');
 
       // Import the exposed App component
-      const { App: RemoteApp } = await import('microApp2/App');
+      const { App: RemoteApp } = await import('App1/App');
 
       // Clear previous component and create new one
       this.vc.clear();
@@ -60,6 +62,21 @@ export class Dashboard {
       console.error('Error loading micro2 app:', err);
     }
   }
+  // async loadMicroApp2() {
+  //   try {
+  //     // Load the remote entry script
+  //     await loadRemoteContainer('microApp2', 'http://localhost:4202/remoteEntry.js');
+
+  //     // Import the exposed App component
+  //     const { App: RemoteApp } = await import('microApp2/App');
+
+  //     // Clear previous component and create new one
+  //     this.vc.clear();
+  //     this.vc.createComponent(RemoteApp);
+  //   } catch (err) {
+  //     console.error('Error loading micro2 app:', err);
+  //   }
+  // }
 
 
   //  async loadMicroApp1() {

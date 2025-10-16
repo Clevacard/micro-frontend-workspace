@@ -16,3 +16,9 @@ declare module 'microApp3/App' {
 
   export const App: Type<any>; // or specify a more precise type
 }
+
+declare module 'App1/App' {
+   import { Type } from '@angular/core';
+
+  export const App: Type<any>; // or specify a more precise type
+}

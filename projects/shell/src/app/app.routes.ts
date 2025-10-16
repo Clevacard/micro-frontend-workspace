@@ -11,7 +11,7 @@ export const routes: Routes = [
     loadComponent: () =>
       loadRemoteModule({
         remoteName: 'microApp1',
-        exposedModule: './App',
+        exposedModule: './App2',
         remoteEntry: 'http://localhost:4201/remoteEntry.js'
       }).then(m => m.App)
    },
