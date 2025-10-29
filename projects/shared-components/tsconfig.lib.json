@@ -5,12 +5,13 @@
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
     "declaration": true,
+    "lib": ["es2022", "dom"],
     "declarationMap": true,
     "inlineSources": true,
     "sourceMap": true,
     "types": [],
      "paths": {
-      "shared-components": ["./projects/shared-components/src/public-api.ts"]
+      "shared-components": ["./src/public-api.ts"]
     }
   },
   "include": [

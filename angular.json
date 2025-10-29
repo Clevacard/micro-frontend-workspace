@@ -364,7 +364,12 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "tsConfig": "projects/shared-components/tsconfig.spec.json"
+            "tsConfig": "projects/shared-components/tsconfig.spec.json",
+             "allowedNonPeerDependencies": [
+            "@angular/forms",
+            "rxjs",
+            "tslib"
+        ]
           }
         }
       }

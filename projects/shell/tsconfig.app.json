@@ -6,7 +6,8 @@
      "paths": {
      "microApp2/*": ["./src/webpack-remotes.d.ts"],
       "microApp1/*": ["./src/webpack-remotes.d.ts"],
-      "microApp3/*": ["./src/webpack-remotes.d.ts"]
+      "microApp3/*": ["./src/webpack-remotes.d.ts"],
+      "shared-components": ["./projects/shared-components/src/public-api.ts"]
      },
     "target": "ES2022",  // or "es2020"
     "module": "esnext",

@@ -12,9 +12,9 @@ module.exports = {
       name: "shell",
       remotes: {
         microApp1: 'microApp1@http://localhost:4201/remoteEntry.js',
-         App1: 'App1@http://localhost:4201/remoteEntry.js',
-        // microApp2: "microApp2@http://localhost:4202/remoteEntry.js",
-        // microApp3: "microApp3@http://localhost:4203/remoteEntry.js",
+        //  App1: 'App1@http://localhost:4201/remoteEntry.js',
+        microApp2: "microApp2@http://localhost:4202/remoteEntry.js",
+        microApp3: "microApp3@http://localhost:4203/remoteEntry.js",
       },
         shared: {
       '@angular/core': { singleton: true, eager: true },

@@ -18,7 +18,7 @@ export const routes: Routes = [
   { path: 'dashboard',  component: Dashboard},
   { path: 'login', component: Login},
   { path: '', component: App, pathMatch: 'full' },
-   { path: '**', redirectTo: '' } 
+   { path: '**', redirectTo: '' } ,
   // {
   //   path: 'app1',
   //   loadComponent: () =>
@@ -27,14 +27,14 @@ export const routes: Routes = [
   //       exposedModule: './App'
   //     }).then(m => m.App)
   // },
-  // {
-  //   path: 'app2',
-  //   loadChildren: () =>
-  //     loadRemoteModule({
-  //       remoteName: 'microApp2',
-  //       exposedModule: './MicroApp2Module'
-  //     }).then(m => m.MicroApp2Module)
-  // },
+  {
+    path: 'app2',
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteName: 'microApp2',
+        exposedModule: './MicroApp2Module'
+      }).then(m => m.MicroApp2Module)
+  },
   // {
   //   path: 'app3',
   //   loadChildren: () =>
@@ -44,6 +44,7 @@ export const routes: Routes = [
   //     }).then(m => m.MicroApp3Module)
   // },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

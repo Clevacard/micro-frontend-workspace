@@ -7,7 +7,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { FormInput } from '../../../shared-components/src/lib/components/form-input/form-input';
 import { DynamicForm } from '../../../shared-components/src/lib/components/dynamic-form/dynamic-form';
 import { FormField } from '../../../shared-components/src/lib/models/form-field.models';
-
+import { SharedCartService, CartItem } from '../../../shared-components/src/lib/api/shared-card.service'; 
+// import { SharedCartService, CartItem } from 'shared-components';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +20,17 @@ import { FormField } from '../../../shared-components/src/lib/models/form-field.
 export class App {
   protected readonly title = signal('micro-app3');
   @ViewChild('vc', { read: ViewContainerRef, static: true }) vc!: ViewContainerRef;
+  cartItems: CartItem[] = [];
 
-  constructor(private injector: Injector, private compiler: Compiler) {}
+  constructor(private injector: Injector,private cartService: SharedCartService) {
+    //  this.cartService.cartItems$.subscribe((items:CartItem[]) => {
+    //   this.cartItems = items;
+    //   console.log('Cart updated in MFE B:', items);
+    // });
+  }
 
+
+  
 formGroup = new FormGroup({});
 myForm = new FormGroup({});
  fields: FormField[] = [
@@ -101,5 +110,22 @@ myForm = new FormGroup({});
     // const moduleRef = await this.compiler.compileModuleAsync(remoteModule.SharedModule);
     // const factory = moduleRef.componentFactoryResolver.resolveComponentFactory(remoteModule.SharedComponent);
     // this.vc.createComponent(factory);
+  }
+
+   receivedMessage = '';
+  private messageListener = (event: MessageEvent) => {
+    if (event.origin !== 'http://localhost:4201') return; // security check
+    if (event.data?.source === 'app1') {
+      this.receivedMessage = event.data.data;
+      console.log('Message received from App1:', event.data.data);
+    }
+  };
+
+  ngOnInit() {
+    window.addEventListener('message', this.messageListener);
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('message', this.messageListener);
   }
 }

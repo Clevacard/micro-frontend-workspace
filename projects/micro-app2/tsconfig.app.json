@@ -6,7 +6,10 @@
     "outDir": "../../out-tsc/app",
     "types": [],
     "paths": {
-      "shared-components": ["./src/public.api.ts"]
+      "shared-components": ["./src/public.api.ts"],
+      //  "shared-components/*": [
+      //   "./projects/shared-components/src/lib/*"
+      // ]
     }
   },
  "files": ["src/main.ts"],

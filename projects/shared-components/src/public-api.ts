@@ -9,3 +9,4 @@ export * from './lib/components/form-input/form-input';
 export * from './lib/components/form-select/form-select';
 export * from './lib/models/form-field.models';
 export * from './lib/shared-components';    
+export * from './lib/api/shared-card.service';
